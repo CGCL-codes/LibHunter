@@ -97,7 +97,7 @@ def jar_to_dex(libs_folder, lib_dex_folder):
         if os.path.exists(tmp_file):
             os.remove(tmp_file)
         
-        cmd = f"java -cp libs/r8.jar com.android.tools.r8.D8 --lib libs/android.jar --output {lib_dex_folder} {input_file}"
+        cmd = f"java -cp libs/d8.jar com.android.tools.r8.D8 --lib libs/android.jar --output {lib_dex_folder} {input_file}"
         print(cmd)
         os.system(cmd)
         tmp_file = f"{lib_dex_folder}/classes.dex"
